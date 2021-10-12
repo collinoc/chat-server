@@ -1,0 +1,56 @@
+#rooms-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13em, 1fr));
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.chat-preview, 
+.new-chat-room {
+    gap: 0.5em;
+    cursor: default;
+}
+
+/* Just messing around trying to practice animations */
+.chat-preview:hover, 
+.new-chat-room:hover {
+    animation: growScale 0.2s linear forwards;
+}
+
+@keyframes growScale {
+    0% { transform: scale(100%); }
+    100% { transform: scale(105%); }
+}
+
+.chat-preview a, 
+.new-chat-room a,
+.delete-chat {
+    color: rgb(150, 0, 0);
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.chat-preview h1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.preview-count {
+    color: #555;
+}
+
+.new-chat-room h1 {
+    color: rgb(0, 0, 125);
+}
+
+#create-room-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem 3rem
+}
+
+#create-room-card form {
+    gap: 1.5rem;
+}

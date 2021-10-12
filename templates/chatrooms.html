@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+{% block page_title %}Chat Rooms{% endblock %}
+
+{% block body %}
+    <div id="rooms-list">
+        <div class="card new-chat-room flex-col">
+            <h1>New＋</h1>
+            <a href="{{ url_for('create_room') }}">Create</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+{% block page_title %}Create Account{% endblock %}
+
+{% block body %}
+<div class="card flex-col" id="create-account-card">
+    <form action="{{ url_for('create_account') }}" method="POST" class="flex-col center" autocomplete="off">
+        <input type="text" placeholder="Username" name="username" required="required"/>
+        <input type="password" placeholder="Password" name="password" required="required" />
+        <input type="password" placeholder="Confirm Password" name="confirm_password" required="required" />
+        <button type="submit">Create</button>
+    </form>
+</div>
+{% endblock %}

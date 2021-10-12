@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block page_title %}{{ session["chatroom"] }}{% endblock %}
+
+{% block body %}
+    <div id="chat-wrapper">
+        <div id="messages">
+        </div>
+        <div id="new-message">
+            <input 
+                type="test" 
+                id="message-input" 
+                class="message-input" 
+                name="new-message" 
+                placeholder="Message" 
+                autocomplete="off"
+                >
+            <button type="button" id="send-new-message">Send</button>
+        </div>
+    </div>
+{% endblock %}

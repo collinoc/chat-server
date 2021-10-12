@@ -1,0 +1,25 @@
+#login-card,
+#create-account-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 1.5rem;
+    padding: 2rem 3rem
+}
+
+#login-card > form ,
+#create-account-card > form {
+    gap: 1.5rem;
+}
+
+#login-card a {
+    text-align: center;
+    color: rgb(0, 0, 225);
+}
+
+#login-card input ,
+#create-account-card input {
+    font-size: 1rem;
+    border-style: none none solid none;
+}   

@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+{% block page_title %}Create Room{% endblock %}
+
+{% block body %}
+    <div class="card flex-col" id="create-room-card">
+        <form method="POST" action="{{ url_for('create_room') }}" class="flex-col center" autocomplete="off">
+            <input type="text" name="room-name" placeholder="Room name">
+            <button type="submit">Submit</button>
+        </form>
+    </div> 
+{% endblock %}

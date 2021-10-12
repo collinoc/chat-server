@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chat Rooms</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='default.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='rooms-list.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='chat.css') }}">
+    </head>
+    
+    <body>
+        <header>
+            {% block header %}
+                <h1 class="page-title">{% block page_title %}Login{% endblock %}</h1>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class="flashes">
+                        {% for m in messages %}
+                            <li>{{ m }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% endwith %}
+                
+                <div id="header-link-wrapper">
+                    {% if "chatroom" in session %}
+                    <a id="leave" class="header-link" href="{{ url_for('leave_room') }}">Leave</a>
+                    {% endif %}
+                    
+                    {% if "username" in session %}
+                    <a id="logout" class="header-link" href="{{ url_for('logout') }}">Logout</a>
+                    {% endif %}
+                </div>
+            {% endblock %}
+        </header>
+
+        {% block body %}
+            <div class="card flex-col" id="login-card">
+                <form action="{{ url_for('login') }}" method="POST" class="flex-col center" autocomplete="off">
+                    <input type="text" placeholder="Username" name="username" required="required"/>
+                    <input type="password" placeholder="Password" name="password" required="required" />
+                    <button type="submit">Login</button>
+                </form>
+                <a href="{{ url_for('create_account') }}">Create Account</a>
+            </div>
+        {% endblock %}
+
+        <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    </body>
+</html>
